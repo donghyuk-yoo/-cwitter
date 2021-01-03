@@ -14,5 +14,5 @@ cloning twitter with React and Firebase
 20/12/30  Router
 21/01/01  Using Firebase Auth
 21/01/02  Login Form
-21/01/03
+21/01/03  Recap
 ```
