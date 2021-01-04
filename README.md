@@ -15,4 +15,6 @@ cloning twitter with React and Firebase
 21/01/01  Using Firebase Auth
 21/01/02  Login Form
 21/01/03  Recap
+21/01/04  creating Account
+21/01/05  Rebuild due to bug, use .gitignore carefully
 ```

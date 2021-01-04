@@ -54,7 +54,6 @@ const Auth = () => {
         <input type="submit" value={newAccount ? "Create Account" : "Log In"} />
       </form>
       <div>
-        <button>Continue with Google</button>
         <button>Continue with Github</button>
       </div>
     </div>
