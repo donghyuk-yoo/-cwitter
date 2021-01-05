@@ -8,8 +8,10 @@ const firebaseConfig = {
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_MESSAGIN_ID,
   appId: process.env.REACT_APP_APP_ID
-  };
+};
   
 firebase.initializeApp(firebaseConfig);
 
 export const authService = firebase.auth();
+
+  
