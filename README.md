@@ -7,7 +7,7 @@ cloning twitter with React and Firebase
 - [x] React
 - [x] Firebase
 
-### progress
+### Progress
 ```
 20/12/28  Initial Setup
 20/12/29  Securing the Keys
