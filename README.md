@@ -20,4 +20,5 @@ cloning twitter with React and Firebase
 21/01/05  Log In
 21/01/08  Social Login
 21/01/09  Log Out
+21/01/12  Form and Database Setup
 ```
