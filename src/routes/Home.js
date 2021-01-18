@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { dbService } from 'fBase';
 
 
-const Home = () => {
+const Home = ({ userObj }) => {
     const [cweet, setCweet] = useState("");
     // getting Cweets
     const [cweets, setCweets] = useState([]);
@@ -24,8 +24,10 @@ const Home = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
         await dbService.collection("cweets").add({
-            cweet,
-            createdAt: Date.now()
+            text: cweet,
+            createdAt: Date.now(),
+            // 누가 cweet했는지
+            creatorId: userObj.uid
         });
         setCweet('');
     };
