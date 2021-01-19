@@ -21,11 +21,13 @@ const Home = ({ userObj }) => {
 
     useEffect(() => {
         // readm delete, update 등, 모든 동작시
+        // 쿼리가 아닌 snapshot 사용으로 실시간 구현
         dbService.collection("cweets").onSnapshot(snapshot => {
             const cweetArray = snapshot.docs.map(doc => ({
                 id:doc.id,
                 ...doc.data()
             }));
+            setCweets(cweetArray);
             console.log(cweetArray);
         })
     }, []);
@@ -63,8 +65,9 @@ const Home = ({ userObj }) => {
             <div>
                 {cweets.map(cweet => 
                     <div key={cweet.id}>
-                        <h4>{cweet.cweet}</h4>
-                    </div>)}
+                        {cweet.text}
+                    </div>
+                )}
             </div>
         </div>
     );
