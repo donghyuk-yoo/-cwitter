@@ -7,18 +7,27 @@ const Home = ({ userObj }) => {
     // getting Cweets
     const [cweets, setCweets] = useState([]);
 
-    const getCweets = async() => {
-        const dbCweets = await dbService.collection("cweets").get();
-        dbCweets.forEach((document) => {
-            const cweetObject = {
-                ...document.data(),
-                id: document.id
-            }
-            setCweets((prev) => [cweetObject, ...prev]);
-        });
-    }
+    // 구식 방식
+    // const getCweets = async() => {
+    //     const dbCweets = await dbService.collection("cweets").get();
+    //     dbCweets.forEach((document) => {
+    //         const cweetObject = {
+    //             ...document.data(),
+    //             id: document.id
+    //         }
+    //         setCweets((prev) => [cweetObject, ...prev]);
+    //     });
+    // }
+
     useEffect(() => {
-        getCweets();
+        // readm delete, update 등, 모든 동작시
+        dbService.collection("cweets").onSnapshot(snapshot => {
+            const cweetArray = snapshot.docs.map(doc => ({
+                id:doc.id,
+                ...doc.data()
+            }));
+            console.log(cweetArray);
+        })
     }, []);
 
     const onSubmit = async (event) => {

@@ -23,5 +23,7 @@ cloning twitter with React and Firebase
 21/01/12  Form and Database Setup
 21/01/14  Creating Cweet (the create part of CRUD)
 21/01/15  Getting the Cweets (the read part of CRUD)
+21/01/18  Realtime Cweets
+21/01/19  Realtime Cweets
 ```
 
