@@ -25,5 +25,6 @@ cloning twitter with React and Firebase
 21/01/15  Getting the Cweets (the read part of CRUD)
 21/01/18  Realtime Cweets
 21/01/19  Realtime Cweets, Bug Fix
+21/01/31  Delete and Update part 1
 ```
 

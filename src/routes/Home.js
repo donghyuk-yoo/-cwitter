@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { dbService } from 'fBase';
+import Cweet from "components/Cweet";
 
 
 const Home = ({ userObj }) => {
@@ -63,11 +64,9 @@ const Home = ({ userObj }) => {
                 <input type="submit" value="Cweet" />
             </form>
             <div>
-                {cweets.map(cweet => 
-                    <div key={cweet.id}>
-                        {cweet.text}
-                    </div>
-                )}
+                {cweets.map(cweet => (
+                    <Cweet key={cweet.id} cweetObj={cweet} isOwner={cweet.creatorId === userObj.uid} />
+                ))}
             </div>
         </div>
     );
