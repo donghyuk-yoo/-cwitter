@@ -20,7 +20,7 @@ function App() {
       {/* 초기화(firebase의 응답)가 완료전 문자열 출력, 
       완료후 router를 통해 이동(auth(회원가입) or home(자동로그인))*/}
       {init ? <AppRouter isLoggedIn={Boolean(userObj)} userObj={userObj} /> : "Initializing..."}
-      <footer>&copy; {new Date().getFullYear()} cwitter</footer>
+      
     </>
   );
 }
