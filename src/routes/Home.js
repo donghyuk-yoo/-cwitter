@@ -7,7 +7,7 @@ const Home = ({ userObj }) => {
     const [cweet, setCweet] = useState("");
     // getting Cweets
     const [cweets, setCweets] = useState([]);
-
+    const [attachment,setAttachment] = useState();
     // 구식 방식
     // const getCweets = async() => {
     //     const dbCweets = await dbService.collection("cweets").get();
@@ -58,11 +58,14 @@ const Home = ({ userObj }) => {
         //use fileReader API
         const reader = new FileReader();
         reader.onloadend = (finishedEvent) => {
-            console.log(finishedEvent);
-        }
+            const {
+                currentTarget: { result }, 
+            } = finishedEvent;
+            setAttachment(result);
+        };
         reader.readAsDataURL(theFile);
-        
     };
+    const ClearAttachment = () => setAttachment(null);
     return (
         <div>
             <form onSubmit={onSubmit}>
@@ -75,6 +78,12 @@ const Home = ({ userObj }) => {
                 />
                 <input type="file" accept="image/*" onChange={onFileChange} />
                 <input type="submit" value="Cweet" />
+                {attachment && (
+                    <div>
+                        <img src={attachment} width="50px" height="50px" />
+                        <button onClick={ClearAttachment}>Clear</button>
+                    </div>
+                )}
             </form>
             <div>
                 {cweets.map(cweet => (

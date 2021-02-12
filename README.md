@@ -29,5 +29,6 @@ cloning twitter with React and Firebase
 21/02/03  Delete and Update part 2
 21/02/06  Recap
 21/02/09  Preview Images part 1
+21/02/12  Preview Images part 2
 ```
 
