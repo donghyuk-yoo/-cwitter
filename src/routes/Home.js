@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { dbService } from 'fBase';
+import { v4 as uuidv4 } from "uuid";
+import { dbService, storageService } from 'fBase';
 import Cweet from "components/Cweet";
 
 
@@ -35,13 +36,16 @@ const Home = ({ userObj }) => {
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        await dbService.collection("cweets").add({
-            text: cweet,
-            createdAt: Date.now(),
-            // 누가 cweet했는지
-            creatorId: userObj.uid
-        });
-        setCweet('');
+        const fileRef = storageService.ref().child(`${userObj.uid}/${uuidv4()}`);
+        const response = await fileRef.putString(attachment, "data_url");
+        console.log(response);
+        // await dbService.collection("cweets").add({
+        //     text: cweet,
+        //     createdAt: Date.now(),
+        //     // 누가 cweet했는지
+        //     creatorId: userObj.uid
+        // });
+        // setCweet('');
     };
     const onChange = (event) => {
         // 이벤트안의 target안의 벨류
