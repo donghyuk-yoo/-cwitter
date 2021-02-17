@@ -31,5 +31,6 @@ cloning twitter with React and Firebase
 21/02/09  Preview Images part 1
 21/02/12  Preview Images part 2
 21/02/14  Uploading
+21/02/17  File URL and Cweet
 ```
 

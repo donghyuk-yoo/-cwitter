@@ -36,16 +36,23 @@ const Home = ({ userObj }) => {
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        const fileRef = storageService.ref().child(`${userObj.uid}/${uuidv4()}`);
-        const response = await fileRef.putString(attachment, "data_url");
-        console.log(response);
-        // await dbService.collection("cweets").add({
-        //     text: cweet,
-        //     createdAt: Date.now(),
-        //     // 누가 cweet했는지
-        //     creatorId: userObj.uid
-        // });
-        // setCweet('');
+        let attachmentUrl = "";
+        if(attachment != "") {
+            const attachmentRef = storageService
+            .ref()
+            .child(`${userObj.uid}/${uuidv4()}`);
+            const response = await attachmentRef.putString(attachment, "data_url");
+            attachmentUrl = await response.ref.getDownloadURL();
+        }
+        const cweetObj = {
+            text: cweet,
+            createdAt: Date.now(),
+            creatorId: userObj.uid,
+            attachmentUrl
+        };
+        await dbService.collection("cweets").add(cweetObj);
+        setCweet("");
+        setAttachment("");
     };
     const onChange = (event) => {
         // 이벤트안의 target안의 벨류
