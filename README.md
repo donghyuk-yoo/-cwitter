@@ -8,6 +8,7 @@ cloning twitter with React and Firebase
 - [x] Firebase
 
 ### Progress
+
 ```
 20/12/28  Initial Setup
 20/12/29  Securing the Keys
@@ -32,5 +33,5 @@ cloning twitter with React and Firebase
 21/02/12  Preview Images part 2
 21/02/14  Uploading
 21/02/17  File URL and Cweet
+21/02/21  Deleting Files
 ```
-
