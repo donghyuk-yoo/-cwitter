@@ -1,4 +1,4 @@
-# cwitter
+# nwitter
 
 cloning twitter with React and Firebase
 
@@ -37,4 +37,5 @@ cloning twitter with React and Firebase
 21/02/26  Get My Own Nweets
 21/03/02  Update Profile, Bugfix
 21/03/07  Cleaning JS
+21/03/08  Deploying
 ```
