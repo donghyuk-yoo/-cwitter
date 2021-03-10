@@ -38,4 +38,5 @@ cloning twitter with React and Firebase
 21/03/02  Update Profile, Bugfix
 21/03/07  Cleaning JS
 21/03/08  Deploying
+21/03/10  Security on Firebase
 ```
