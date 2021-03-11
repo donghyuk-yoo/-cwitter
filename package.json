@@ -50,8 +50,8 @@
     ]
   },
   "main": "index.js",
-  "repository": "https://github.com/donghyuk-yoo/cwitter.git",
+  "repository": "https://github.com/donghyuk-yoo/cwitter",
   "author": "YOODONGHYUK <ydh8485@gmail.com>",
   "license": "MIT",
-  "homepage": "https://donghyuk-yoo.github.io/nwitter"
+  "homepage": "https://donghyuk-yoo.github.io/cwitter"
 }
